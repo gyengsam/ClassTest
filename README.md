@@ -43,14 +43,124 @@
   </p>
 </div>
   
-  
+<br>
 
-# ClassTest
-test
+## Install
 
-# mermaid
-```mermaid
-graph LR
-A(입력)-->B[연산]
-B-->C(출력)
-```
+- <img height="16" src="./resources/icons/chrome.svg"> **Google Chrome**: [GitHub + Mermaid - Chrome Web Store](https://chrome.google.com/webstore/detail/github-%20-mermaid/goiiopgdnkogdbjmncgedmgpoajilohe)
+- <img height="16" src="./resources/icons/firefox.svg"> **Firefox**: [GitHub + Mermaid - Firefox Add-ons](https://addons.mozilla.org/en-GB/firefox/addon/github-mermaid/)
+- <img height="16" src="./resources/icons/opera.svg"> **Opera**: coming later
+
+## Features
+
+### Supported GitHub features
+
+- [x] Pull requests & issues description (preview + published) - [Demo](https://github.com/BackMarket/github-mermaid-extension/issues/1)
+- [x] Pull requests & issues comment (preview + published)
+- [x] Markdown (`.md`) files (diff + published)
+- [x] Gists - [Demo](https://gist.github.com/amercier/df2e07a994315d323e398120bdda3989)
+
+### Diagram types
+
+#### Flowcharts
+
+![Flowchart example](/resources/screenshots/flowchart.png)
+
+<details>
+  <summary>Show source code</summary>
+
+  ```
+  ```mermaid
+  graph LR
+
+  A(Start)
+
+  A --> B[Look for an item]
+
+  B --> C{Did you find it?}
+  C -->|Yes| D(Stop looking)
+  C -->|No| E{Do you need it?}
+  E -->|Yes| B
+  E -->|No| D
+  ```
+</details>
+
+#### Sequence Diagrams
+
+![Sequence Diagram example](/resources/screenshots/sequence-diagram.png)
+
+<details>
+  <summary>Show source code</summary>
+
+  ```
+  ```mermaid
+  sequenceDiagram
+  participant U as User
+  participant C as Client
+  participant S as Server
+  participant DB as Database
+
+  U ->> C: Fill username
+  U ->> C: Fill password
+  C ->> U: Enable "Login" button
+  U ->> C: Click "Login" button
+  C ->>+ S: POST /login
+  S ->>+ DB: SELECT FROM users
+  Note over S,DB: See login.py for impl. details
+  DB -->>- S: results
+  S -->>- C: { authenticated: true }
+  C ->> U: redirect /home
+  ```
+</details>
+
+#### Gantt Diagrams
+
+![Gantt Diagram example](/resources/screenshots/gantt-diagram.png)
+
+<details>
+  <summary>Show source code</summary>
+
+  ```
+  ```mermaid
+  gantt
+      title A Gantt Diagram
+      dateFormat  YYYY-MM-DD
+      section Section
+      A task           :a1, 2014-01-01, 30d
+      Another task     :after a1  , 20d
+      section Another
+      Task in sec      :2014-01-12  , 12d
+      another task      : 24d
+  ```
+</details>
+
+## How to use
+
+Simply put Mermaid code into <code>```mermaid</code>. See
+[Mermaid official website](https://mermaidjs.github.io/gantt.html) for more
+information about the Mermaid syntax.
+
+## Roadmap
+
+- [x] Initial implementation
+- [x] Publish Chrome extension
+- [x] Documentation
+- [x] Publish Firefox extension
+- [ ] Publish Opera extension
+- [x] Continuous Integration
+- [x] Upgrade dependencies
+- [x] Automatic dependency management
+- [x] Fix #3
+- [ ] Testing
+- [ ] Dark theme + option page
+- [ ] Cleanup
+
+## License
+
+[![License](https://img.shields.io/github/license/BackMarket/github-mermaid-extension.svg)](/LICENSE.md)
+
+## Contributing
+
+Contributions (issues ♥, pull requests ♥♥♥) are more than welcome! Feel free to clone, fork, modify, extend, etc.
+
+See [contributing intructions](/CONTRIBUTING.md) for details.
