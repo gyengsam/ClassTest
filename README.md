@@ -51,6 +51,18 @@
 - <img height="16" src="./resources/icons/firefox.svg"> **Firefox**: [GitHub + Mermaid - Firefox Add-ons](https://addons.mozilla.org/en-GB/firefox/addon/github-mermaid/)
 - <img height="16" src="./resources/icons/opera.svg"> **Opera**: coming later
 
+<details>
+  <summary>Show source code</summary>
+  ```
+  ```mermaid
+  graph LR
+  A[Hard edge] -->B(Round edge)
+    B --> C{Decision}
+    C -->|One| D[Result one]
+    C -->|Two| E[Result two]
+  ```
+</details>
+
 ## Features
 
 ### Supported GitHub features
